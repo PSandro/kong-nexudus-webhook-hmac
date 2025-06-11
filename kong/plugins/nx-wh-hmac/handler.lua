@@ -1,4 +1,3 @@
-local kong = kong
 local openssl_mac = require "resty.openssl.mac"
 
 local HEADERS_NX_SIG = "X-Nexudus-Hook-Signature"
@@ -7,11 +6,6 @@ local NxWhHmacHandler = {
   VERSION = "0.0.0",
   PRIORITY = 1029,
 }
-
-
-local function calc_sig(body)
-
-end
 
 function NxWhHmacHandler:access(conf)
   local headers = kong.request.get_headers()
